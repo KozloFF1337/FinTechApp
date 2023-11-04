@@ -26,7 +26,6 @@ namespace FinTechApp
         FinTechDBRightContext rightdb;
         FileStream stream;
         string filePath = "C:/Users/kozlo/Downloads/Madina/Input Data/CL01_2023.08.10/CL01_2023.08.10/cl01_2023.08.10_23-59-30.txt";
-        string a;
         public MainWindow()
         {
             InitializeComponent();
@@ -52,7 +51,7 @@ namespace FinTechApp
             byte[] array = new byte[stream.Length];
             stream.Read(array,0,array.Length);
             string[] textfromfile = System.Text.Encoding.Default.GetString(array).Split(new string[] { " ", "-","\r","\n" }, StringSplitOptions.RemoveEmptyEntries);
-            for (int i = 0; i < textfromfile.Length; i+=6)
+            for (int i = 0; i < textfromfile.Length-6; i+=6)
             {
                 finTechDB = new FinTechDB(textfromfile[i], textfromfile[i + 1], double.Parse(textfromfile[i + 2]));
                 db.FinTechDB.Add(finTechDB);
@@ -60,8 +59,10 @@ namespace FinTechApp
                 rightdb.FinTechDB.Add(finTechDB);
             }
             db.SaveChanges();
+            rightdb.SaveChanges();
             List<FinTechDB> l = db.FinTechDB.ToList();
             List<FinTechDB> k = rightdb.FinTechDB.ToList();
+            stream.Close();
         }
     }
 }

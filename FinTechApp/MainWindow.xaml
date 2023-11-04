@@ -88,6 +88,6 @@
             <ColumnDefinition Width="120"/>
             <ColumnDefinition Width="120"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="-1.615,-0.551" Width="208" Height="33" Click="Button_Click"/>
+        <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="-1.615,-0.551" Width="100" Height="33" Click="Button_Click"/>
     </Grid>
 </Window>
