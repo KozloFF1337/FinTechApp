@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace FinTechApp
 {
-    internal class FinTechDB
+    internal class FinTech
     {
         public int id { get; set; }
         public double Value { get; set; }
         public string Column { get; set; }
         public string Row { get; set; }
-        public FinTechDB() { }
-        public FinTechDB( string column, string row, double value)
+        public FinTech() { }
+        public FinTech( string column, string row, double value)
         {
             Value = value;
             Column = column;

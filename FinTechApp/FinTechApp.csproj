@@ -82,10 +82,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="FinTechDBContext.cs" />
-    <Compile Include="FinTechDB.cs" />
-    <Compile Include="FinTechDBRightContext.cs" />
-    <Compile Include="FinTechDBRight.cs" />
+    <Compile Include="FinTechContext.cs" />
+    <Compile Include="FinTech.cs" />
+    <Compile Include="FinTechRight.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

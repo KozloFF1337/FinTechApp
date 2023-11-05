@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace FinTechApp
 {
-    internal class FinTechDBRight
+    internal class FinTechRight
     {
         public int id { get; set; }
         public double Value { get; set; }
         public string Column { get; set; }
         public string Row { get; set; }
-        public FinTechDBRight() { }
-        public FinTechDBRight(string column, string row, double value)
+        public FinTechRight() { }
+        public FinTechRight(string column, string row, double value)
         {
             Value = value;
             Column = column;
