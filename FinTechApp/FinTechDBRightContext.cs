@@ -11,6 +11,7 @@ namespace FinTechApp
     internal class FinTechDBRightContext : DbContext
     {
         public DbSet<FinTechDB> FinTechDB { get; set; }
+        public DbSet<FinTechDBRight> FinTechDBRight { get; set; }
         public FinTechDBRightContext() : base("RightConnection") { }
     }
 }

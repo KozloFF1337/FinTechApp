@@ -85,6 +85,7 @@
     <Compile Include="FinTechDBContext.cs" />
     <Compile Include="FinTechDB.cs" />
     <Compile Include="FinTechDBRightContext.cs" />
+    <Compile Include="FinTechDBRight.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -111,7 +112,6 @@
     <None Include="FinTechDB.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="FinTechDBRight.db" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

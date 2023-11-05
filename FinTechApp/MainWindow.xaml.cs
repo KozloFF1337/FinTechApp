@@ -23,14 +23,12 @@ namespace FinTechApp
     public partial class MainWindow : Window
     {
         FinTechDBContext db;
-        FinTechDBRightContext rightdb;
         FileStream stream;
         string filePath = "C:/Users/kozlo/Downloads/Madina/Input Data/CL01_2023.08.10/CL01_2023.08.10/cl01_2023.08.10_23-59-30.txt";
         public MainWindow()
         {
             InitializeComponent();
             db = new FinTechDBContext();
-            rightdb = new FinTechDBRightContext();
             int k = ((int)this.Height) / 63;
             int m = ((int)this.Width) / 16;
             MainGrid.RowDefinitions[0].Height = new GridLength(1080 - 61 * k);
@@ -47,6 +45,7 @@ namespace FinTechApp
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             FinTechDB finTechDB;
+            FinTechDBRight finTechDBRight;
             stream = File.OpenRead(filePath);
             byte[] array = new byte[stream.Length];
             stream.Read(array,0,array.Length);
@@ -55,13 +54,12 @@ namespace FinTechApp
             {
                 finTechDB = new FinTechDB(textfromfile[i], textfromfile[i + 1], double.Parse(textfromfile[i + 2]));
                 db.FinTechDB.Add(finTechDB);
-                finTechDB = new FinTechDB(textfromfile[i+3], textfromfile[i + 4], double.Parse(textfromfile[i + 5]));
-                rightdb.FinTechDB.Add(finTechDB);
+                finTechDBRight = new FinTechDBRight(textfromfile[i + 3], textfromfile[i + 4], double.Parse(textfromfile[i + 5]));
+                db.FinTechDBRight.Add(finTechDBRight);
             }
             db.SaveChanges();
-            rightdb.SaveChanges();
             List<FinTechDB> l = db.FinTechDB.ToList();
-            List<FinTechDB> k = rightdb.FinTechDB.ToList();
+            List<FinTechDBRight> k = db.FinTechDBRight.ToList();
             stream.Close();
         }
     }
